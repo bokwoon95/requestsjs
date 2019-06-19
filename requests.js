@@ -7,6 +7,7 @@
  *    requests('POST', url).setHeaders(headers).setData(data).send()
  *    requests('POST', url, headers, data).send()
  *    requests('GET', url, headers, data).urlEncodeData().send()
+ *    https://www.tomas-dvorak.cz/posts/nodejs-request-without-dependencies/
  */
 
 const https = require('https')
