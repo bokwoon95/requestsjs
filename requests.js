@@ -1,13 +1,12 @@
 'use strict'
 
 /**
- * Custom HTTPS request library
+ * Convenience wrapper over node https package
  * Usage:
  *    requests('GET', url).send()
  *    requests('POST', url).setHeaders(headers).setData(data).send()
  *    requests('POST', url, headers, data).send()
  *    requests('GET', url, headers, data).urlEncodeData().send()
- *    https://www.tomas-dvorak.cz/posts/nodejs-request-without-dependencies/
  */
 
 const https = require('https')
@@ -90,11 +89,11 @@ module.exports = (method, url, headers, data) => {
     path: parsedUrl.pathname,
 
     // methods
-    setHeaders: setHeaders,
-    setData: setData,
-    urlEncodeData: urlEncodeData,
-    stringifyResult: stringifyResult,
-    send: send
+    setHeaders,
+    setData,
+    urlEncodeData,
+    stringifyResult,
+    send
   }
   if (typeof headers !== 'undefined' && headers !== null) { requests.setHeaders(headers) }
   if (typeof data !== 'undefined' && data !== null) { requests.setData(data) }
